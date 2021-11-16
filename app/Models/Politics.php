@@ -16,4 +16,12 @@ class Politics extends Model
         'user_id', 'politics_parties_id', 'name', 'last_name', 'image', 'country', 'city', 'personal_information', 'political_career', 'political_achievements', 'goals',
     ];
 
+    public static function getAllPolitics(){
+        return self::all();
+    }
+
+    public static function getPoliticFromId(int $id){
+        return self::where('id', $id)->first()->get();
+    }
+
 }

@@ -42,4 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function getAccessFromUser(String $email){
+        return self::where('email', $email)->get();
+    }
+
 }

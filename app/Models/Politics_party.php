@@ -16,4 +16,12 @@ class Politics_party extends Model
         'user_id', 'name', 'logo', 'message', 'description', 'subscription',
     ];
 
+    public static function getAllPartyPolitics(){
+        return self::all();
+    }
+
+    public static function getPartyPoliticsFromId(int $id){
+        return self::where('id', $id)->first()->get();
+    }
+
 }
